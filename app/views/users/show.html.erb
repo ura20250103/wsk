@@ -3,11 +3,18 @@
 <table class="table">
 
 	<tr>
-	  	<th>name</th>
+	  	<th>名前</th>
 		
 		<th><%= @user.user_name %></th>
 	
 	</tr>
+<tr>
+	  	<th>フリガナ</th>
+		
+		<th><%= @user.user_kana_name %></th>
+	
+	</tr>
+
 	<tr>
 		<th>introduction</th>
 	  	<th><%= @user.email %></th>
@@ -15,3 +22,5 @@
 </table>
 
 <%= link_to "logout", destroy_user_session_path,method: :delete %>
+
+<%= link_to "自分の情報の編集", edit_user_path %>

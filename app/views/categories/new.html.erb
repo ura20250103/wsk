@@ -1,0 +1,15 @@
+<h1>Categories#new</h1>
+<p>Find me in app/views/categories/new.html.erb</p>
+
+<h1>ジャンル追加</h1>
+
+
+<%= form_for(@category) do |f| %>
+<div class="field row">
+    <%= f.label :ジャンル名 %>
+    <%= f.text_field :name %>
+  </div>
+  <div>
+    <%= f.submit "追加" ,class: 'btn btn-info' %>
+  </div>
+<% end %>

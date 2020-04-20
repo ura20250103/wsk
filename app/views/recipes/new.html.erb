@@ -1,0 +1,26 @@
+<h1>Recipes#new</h1>
+<p>Find me in app/views/recipes/new.html.erb</p>
+
+
+<%= form_for(@recipe) do |f| %>
+  <div class="field row">
+    <%= f.label :料理名 %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="field row">
+    <%= f.label :材料 %>
+    <%= f.text_field :material %>
+  </div>
+
+  <div class="field row">
+    <%= f.label :手順 %>
+    <%= f.text_field :process %>
+  </div>
+
+
+
+  <div>
+    <%= f.submit "レシピ保存" ,class: 'btn btn-primary' %>
+  </div>
+<% end %>

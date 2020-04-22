@@ -1,0 +1,17 @@
+<h1>Recipes#show</h1>
+<p>Find me in app/views/recipes/show.html.erb</p>
+
+<table class="table">
+					<tr>
+						
+                <td><%= link_to @recipe.title, @recipe %></td>
+                <td><%= @recipe.material %></td>
+                <td><%= @recipe.process %></td>
+            <% if @recipe.user == current_user %>
+                        <td>
+                            <%= link_to "Destroy",@recipe, method: :delete, data: {confirm: "本当に削除してもよろしいですか？"}, class: "btn-sm btn-danger destroy_recipe_#{@recipe.id}" %>
+                        </td>
+            <% end %>
+					</tr>
+</table>
+<p><span>名前: </span><%= @user.user_name %></p> <!-- 追加 -->

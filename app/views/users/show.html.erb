@@ -21,6 +21,15 @@
 	</tr>
 </table>
 
+
+
+
 <%= link_to "logout", destroy_user_session_path,method: :delete %>
 
 <%= link_to "自分の情報の編集", edit_user_path %>
+
+<% @recipes.each do |recipe| %>
+  <hr>
+  <p><span>料理名: </span><%=link_to recipe.title, recipe_path %></p>
+<% end %>
+

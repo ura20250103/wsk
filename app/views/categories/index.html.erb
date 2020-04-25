@@ -5,13 +5,20 @@
 
             <tbody>
 				<% @category.each do |category| %>
-				
 				<tr>
 					<td><%=link_to category.name %></td>
 				</tr>
-				
 				<% end %>
 			</tbody>
 </table>
 
 <%= link_to "新しいジャンル作成", new_category_path, class: "btn btn-info" %>
+
+<% @recipes.each do |recipe| %>
+					<div>
+						
+						<br><%= recipe.title %>
+						    
+						<br><%= recipe.category %>
+					</div>
+					<% end %>

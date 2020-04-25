@@ -5,9 +5,9 @@
 					<tr>
 						
 						<td><%= link_to recipe.title, recipe, class: "recipe_#{recipe.id}" %></td>
-						<td><%= recipe.material %></td>
-            <td><%= recipe.process %></td>
+						
 					</tr>
 					<p><span>名前: </span><%=link_to recipe.user.user_name, user_path(recipe.user.id) %></p>
+					<p><span>ジャンル: </span><%=link_to recipe.category.name, categories_path(recipe.category.id) %></p>
 	
 <% end %>

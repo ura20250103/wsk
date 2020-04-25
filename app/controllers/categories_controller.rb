@@ -1,6 +1,8 @@
 class CategoriesController < ApplicationController
   def index
     @category = Category.all
+    
+    @recipes = Recipe.all
   end
 
   def new

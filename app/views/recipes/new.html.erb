@@ -1,7 +1,6 @@
 <h1>Recipes#new</h1>
-<p>Find me in app/views/recipes/new.html.erb</p>
-
-
+<div class="container m-5">
+<div class="row">
 <%= form_for(@recipe) do |f| %>
   <div class="field row">
     <%= f.label :料理名 %>
@@ -9,12 +8,12 @@
   </div>
 
   <div class="field row">
-    <%= f.label :材料 %>
+    <%= f.label :"材    料" %> 
     <%= f.text_field :material %>
   </div>
 
   <div class="field row">
-    <%= f.label :手順 %>
+    <%= f.label :"手    順" %> 
     <%= f.text_field :process %>
   </div>
 
@@ -26,3 +25,5 @@
   </div>
 
   <% end %>
+</div>
+</div>

@@ -1,7 +1,6 @@
 class RecipesController < ApplicationController
   def index
     @recipe = Recipe.new 
-    
     @recipes = Recipe.all
   
   end
@@ -28,6 +27,13 @@ class RecipesController < ApplicationController
     @user = @recipe.user
     @category = @recipe.category
    
+  end
+
+
+  def destroy
+  	@recipe = Recipe.find(params[:id])
+  	@recipe.destroy
+  	redirect_to recipes_path, notice: "successfully delete book!"
   end
 
   private

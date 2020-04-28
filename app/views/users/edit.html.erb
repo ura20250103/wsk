@@ -1,10 +1,13 @@
 <h1>Users#edit</h1>
-
+<div class="container">
+	<div class="row">
+		<div class="col-xs-3">
+			<%= render "users/sidebar",user: @user %>
+    </div>
+	 <div class="col-xs-9">
 <h2>登録情報編集</h2>
 
 <%= form_for(@user) do |f| %>
-
-
 <table>
   <tbody>
    <tr>
@@ -28,22 +31,32 @@
     
    </tr>
    <tr>
-    <td>メールアドレス</td>
+    <td>詳細</td>
     <td>
     <div class="field">
-      <%= f.label :" " %>
-      <%= f.text_field :email, class: "email" %>
+      <%= f.label :"詳細" %>
+      <%= f.text_field :introduction, class: "introduction" %>
     </div>
     </td>
    </tr>
-   
-   
-   
-  </tbody>
-</table>
 
+   
+   <tr>
+    <td>画像</td>
+    <td>
+    <div class="field">
+      <%= f.label :"画像" %>
+      <%= f.attachment_field :profile_image %>
+    </div>
+    </td>
+   </tr>
+  </tbody>
+ 
+</table>
 <div class="actions">
 	<%= f.submit "編集内容を保存する" %>
 </div>
-
 <% end %>
+</div>
+</div>
+</div>

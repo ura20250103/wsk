@@ -16,14 +16,17 @@
       <nav class="navbar navbar-expand-lg navbar-light ">
         <a class="navbar-brand " href="#">Plus Delicieux</a>
           <ul class="navbar-nav">
+          <% if current_user == @user %>
             <li class="nav-item active">
               <%= link_to "マイページ", user_path(current_user.id), class: "nav-link" %></li>
+            <li class="nav-item active">
+              <%= link_to "logout", destroy_user_session_path, class: "nav-link", method: :delete %></li>
+          <%end%>
             <li class="nav-item active">
               <%= link_to "レシピ一覧", recipes_path, class: "nav-link" %></li>
             <li class="nav-item active">
               <%= link_to "ジャンル一覧", categories_path, class: "nav-link" %></li>
-            <li class="nav-item active">
-              <%= link_to "logout", destroy_user_session_path, class: "nav-link", method: :delete %></li>
+            
           </ul>
      </nav>
     </div>

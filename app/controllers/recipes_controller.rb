@@ -2,12 +2,13 @@ class RecipesController < ApplicationController
   def index
     @recipe = Recipe.new 
     @recipes = Recipe.all
-  
+    @user = current_user
+   
   end
 
   def new
     @recipe = Recipe.new
-    
+    @user = current_user
     @categories = Category.all
  
     
@@ -26,6 +27,8 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
     @user = @recipe.user
     @category = @recipe.category
+    @user = current_user
+    
    
   end
 

@@ -1,4 +1,10 @@
 <h1>Recipes#show</h1>
+<div class="container">
+	<div class="row">
+		<div class="col-xs-3">
+			<%= render "users/sidebar",user: @user %>
+        </div>
+		<div class="col-xs-9">
 <table class="table">
 					<tr>
 						
@@ -14,3 +20,6 @@
 </table>
 <p><span>名前: </span><%= @user.user_name %></p> <!-- 追加 -->
 <p><span>ジャンル: </span><%= @category.name %></p>
+</div>
+</div>
+</div>

@@ -1,22 +1,31 @@
 <h1>Categories#index</h1>
-<table class="table table-hover table-inverse">
-
-            <tbody>
-				<% @category.each do |category| %>
-				<tr>
-					<td><%=link_to category.name %></td>
-				</tr>
-				<% end %>
-			</tbody>
-</table>
-
-<%= link_to "新しいジャンル作成", new_category_path, class: "btn btn-info" %>
-
-<% @recipes.each do |recipe| %>
-					<div>
-						
-						<br><%= recipe.title %>
-						    
-						<br><%= recipe.category %>
-					</div>
+<div class="container">
+		<div class="row">
+			<div class="col-xs-4">
+				<table class="table table-hover table-inverse">
+					<% @category.each do |category| %>
+						<tbody>
+									<tr>
+										<td><%=link_to category.name %></td>
+									</tr>
+						</tbody>
 					<% end %>
+				</table>
+				<%= link_to "新しいジャンル作成", new_category_path, class: "btn btn-info" %>
+			</div>
+
+			<div class="col-xs-8">
+       <h1>全ジャンル一覧</h1>
+				<% @recipes.each do |recipe| %>
+					<table class="table table-hover table-inverse">
+							<tr>
+									<td><%= image_tag attachment_url(recipe.user, :profile_image, :fill, 50, 50, format: "jpg", fallback: "japan.jpg") %></td>
+									<td>名前: <%=link_to recipe.user.user_name, user_path(recipe.user.id) %></td>
+									<td>料理名: <%= link_to recipe.title, recipe, class: "recipe_#{recipe.id}" %></td>
+									<td>ジャンル: <%=link_to recipe.category.name, categories_path(recipe.category.id) %></td>
+							</tr>
+					</table>
+				<% end %>
+		 </div>
+	</div>
+</div>

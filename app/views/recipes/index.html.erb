@@ -1,20 +1,22 @@
-<h1>Recipes#index</h1>
-<div class="container">
-	<div class="row">
-		<div class="col-xs-3">
+
+
+    <div class="flex-item1">
 			<%= render "users/sidebar",user: @user %>
     </div>
-		<div class="col-xs-9">
-<% @recipes.each do |recipe| %>
-	<table>
-	     <tr>
-			    <th><%= image_tag attachment_url(recipe.user, :profile_image, :fill, 50, 50, format: "jpg", fallback: "japan.jpg") %></th>
-					<th>名前: <%=link_to recipe.user.user_name, user_path(recipe.user.id) %></th>
-					<th><%= link_to recipe.title, recipe, class: "recipe_#{recipe.id}" %></th>
-					<th>ジャンル: <%=link_to recipe.category.name, categories_path(recipe.category.id) %></th>
-			 </tr>
-	</table>
-<% end %>
-</div>
-</div>
-</div>
+	  <div class="flex-item2">
+			<% @recipes.each do |recipe| %>
+				<table class="table tables-bordered">
+					<tbody>
+						<tr>
+								<th><%= image_tag attachment_url(recipe.user, :profile_image, :fill, 50, 50, format: "jpg", fallback: "japan.jpg") %><br>
+								<%=link_to recipe.user.user_name, user_path(recipe.user.id) %></th>
+								<th><br><br><%= link_to recipe.title, recipe, class: "recipe_#{recipe.id}" %></th>
+								<th><br><br>カテゴリー:<%=link_to recipe.category.name, categories_path(recipe.category.id) %></th>
+								
+								<th><br><br>更新日:<%= recipe.updated_at.to_s(:datetime_jp) %></th>
+						</tr>
+					</tbody>
+				</table>
+			<% end %>
+    </div>
+ 

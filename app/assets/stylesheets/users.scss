@@ -2,9 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-div.example {
-  width: 100px;
+
+div.scr{
+
+  width: 200px;
   height: 100px;
-  background-color: red;
-  overflow: scroll;
+  overflow-y: scroll;
+  
 }

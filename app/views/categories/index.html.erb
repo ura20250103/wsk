@@ -1,8 +1,7 @@
-<h1>Categories#index</h1>
-<div class="container">
-		<div class="row">
-			<div class="col-xs-4">
+
+<div class="flex-item1">
 				<table class="table table-hover table-inverse">
+
 					<% @category.each do |category| %>
 						<tbody>
 									<tr>
@@ -14,7 +13,7 @@
 				<%= link_to "新しいジャンル作成", new_category_path, class: "btn btn-info" %>
 			</div>
 
-			<div class="col-xs-8">
+			<div class="flex-item2">
        <h1>全ジャンル一覧</h1>
 				<% @recipes.each do |recipe| %>
 					<table class="table table-hover table-inverse">
@@ -27,5 +26,4 @@
 					</table>
 				<% end %>
 		 </div>
-	</div>
-</div>
+	

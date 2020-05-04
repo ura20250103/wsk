@@ -1,48 +1,39 @@
-<h1>Users#edit</h1>
-<div class="container">
-	<div class="row">
-		<div class="col-xs-3">
-			<%= render "users/sidebar",user: @user %>
-    </div>
-	 <div class="col-xs-9">
-<h2>登録情報編集</h2>
 
+<div class="flex-item1">
+			<%= render "users/sidebar",user: @user %>
+</div>
+<div class="flex-item2">
+<h2>登録情報編集</h2>
 <%= form_for(@user) do |f| %>
 <table>
   <tbody>
    <tr>
-    <td>名前</td>
-    <td>
+    <td>名前
     <div class="field">
       <%= f.label :" " %>
       <%= f.text_field :user_name, class: "user_name" %>
     </div>
     </td>
-    
    </tr>
+
    <tr>
-    <td>フリガナ</td>
-    <td>
+    <td>フリガナ
     <div class="field">
       <%= f.label :" " %>
       <%= f.text_field :user_kana_name, class: "user_kana_name" %>
     </div>
     </td>
-    
    </tr>
+
    <tr>
-    <td>詳細</td>
-    <td>
-    <div class="field">
-      <%= f.label :"詳細" %>
+    <td>詳細
+    <div class="field scr">
+      <%= f.label :" " %>
       <%= f.text_field :introduction, class: "introduction" %>
     </div>
     </td>
    </tr>
-
-   
    <tr>
-    <td>画像</td>
     <td>
     <div class="field">
       <%= f.label :"画像" %>
@@ -54,9 +45,7 @@
  
 </table>
 <div class="actions">
-	<%= f.submit "編集内容を保存する" %>
+	<%= f.submit "編集内容を保存する", class: "btn btn-info" %>
 </div>
 <% end %>
-</div>
-</div>
 </div>

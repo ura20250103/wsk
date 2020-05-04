@@ -1,12 +1,52 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8">
     <title>Wsk</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-3.1.0.min.js"></script>
+
+    <script>
+      $(function(){
+        // #で始まるリンクをクリックしたら実行されます
+        $('a[href^="#"]').click(function() {
+          // スクロールの速度
+          var speed = 400; // ミリ秒で記述
+          var href= $(this).attr("href");
+          var target = $(href == "#" || href == "" ? 'html' : href);
+          var position = target.offset().top;
+          $('body,html').animate({scrollTop:position}, speed, 'swing');
+          return false;
+        });
+      });
+    </script>
+
+    <style>
+    .flexbox {
+    display: flex; /* 要素をflexコンテナとして定義する */
+    width: 100%; /* flexコンテナの横幅を指定する */
+    height: 100%; /* flexコンテナの高さを指定する */
+    border: 2px solid #006DD9; /* flexコンテナの境界線を実線で指定する */
+    flex-direction: row;
+    }
+    .flex-item1 {
+    flex-basis: 20%; /* flexアイテムの幅を割合で指定 */
+    
+
+    }
+    .flex-item2 {
+    flex-basis: 70%; /* flexアイテムの幅を割合で指定 */
+    margin-left: auto;
+
+    }
+    </style>
+    
+  
   </head>
 
 <body>
@@ -16,7 +56,8 @@
       <nav class="navbar navbar-expand-lg navbar-light ">
         <a class="navbar-brand " href="#">Plus Delicieux</a>
           <ul class="navbar-nav">
-          <% if current_user == @user %>
+
+          <% if current_user && current_user == @user %>
             <li class="nav-item active">
               <%= link_to "マイページ", user_path(current_user.id), class: "nav-link" %></li>
             <li class="nav-item active">
@@ -32,6 +73,7 @@
     </div>
   </div>
   </header>
+  <div class="flexbox">
 
   <% if flash[:notice] %>
         <div class="flash">
@@ -40,5 +82,6 @@
   <% end %>
 
     <%= yield %>
+  </div>
   </body>
 </html>

@@ -4,27 +4,29 @@
 </div>
 
 <div class="flex-item2">
-<h1 id="index">レシピ詳細</h1>
-    <ul>
-      <li><a href="#1"><%= @recipe.title %></a>
-      <p><span>ジャンル: </span><%= @category.name %></p>
-      </li>
-       
-      <li><a href="#2">手順</a></li>
-      <li><a href="#3">材料</a></li>
-    </ul>
-    <div id="1">
-      <h5><%= @recipe.title %></h5>
+  <h1>レシピ詳細</h1>
+      <ul>
+        <li><%= @recipe.title %>
+        <p><span>ジャンル: </span><%= @category.name %></p>
+        </li>
+        
+        <li>材料</li>
+        <li>手順</li>
+      </ul>
+    
+        <h5>材料:<br>
+          <div class="scr_recipe">
+            <%= @recipe.material %>
+          </div>
+        </h5>
+
+        <h5>手順:<br>
+          <div class="scr_recipe">
+            <%= @recipe.process %>
+          </div>
+        </h5>
       
-    </div>
-    <div id="2">
-      <h5>材料:<br><%= @recipe.material %></h5>
-      <a class="button" href="#index">Topへ</a>
-    </div>
-    <div id="3">
-      <h5>手順:<br><%= @recipe.process %></h5>
-      <a class="button" href="#index">Topへ</a>
-      </div>
+
     
 
 <% if @recipe.user == current_user %>

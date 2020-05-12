@@ -27,7 +27,7 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
     @user = @recipe.user
     @category = @recipe.category
-    @user = current_user
+    
     
    
   end

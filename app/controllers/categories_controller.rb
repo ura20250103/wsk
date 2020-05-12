@@ -1,8 +1,12 @@
 class CategoriesController < ApplicationController
   def index
-    @category = Category.all
+    @categories = Category.all
     
-    @recipes = Recipe.all
+    if params[:id].present?
+      @recipes = Recipe.where(category_id:params[:id].to_i)
+    else
+      @recipes = Recipe.all
+    end
   end
 
   def new

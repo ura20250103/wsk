@@ -31,7 +31,7 @@
     display: flex; /* 要素をflexコンテナとして定義する */
     width: 100%; /* flexコンテナの横幅を指定する */
     height: 100%; /* flexコンテナの高さを指定する */
-    border: 2px solid #006DD9; /* flexコンテナの境界線を実線で指定する */
+    
     flex-direction: row;
     }
     .flex-item1 {
@@ -41,8 +41,28 @@
     }
     .flex-item2 {
     flex-basis: 70%; /* flexアイテムの幅を割合で指定 */
-    margin-left: auto;
+    margin: auto;
 
+    }
+
+    .flex-item3 {
+    width: 100% !important;
+    height: 80px !important;
+    padding: 30 !important;
+    margin-left: auto;
+    font-size: 30pt;
+    }
+
+    .flex-itemX {
+    width: 100% !important;
+    height: 80px !important;
+    margin-top: 20%;
+    }
+   
+   .flex-itemY {
+    width: 100% !important;
+    height: 80px !important;
+    margin-top: 80px;
     }
     </style>
     
@@ -50,7 +70,10 @@
   </head>
 
 <body>
+<% if request.path != "/homes/top"%>
+
   <header>
+
   <div class="container m-5">
     <div class="row">
       <nav class="navbar navbar-expand-lg navbar-light ">
@@ -73,6 +96,8 @@
     </div>
   </div>
   </header>
+  <% end %>
+  
   <div class="flexbox">
 
   <% if flash[:notice] %>

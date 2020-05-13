@@ -14,6 +14,6 @@ Rails.application.routes.draw do
  
   
 
-  get 'homes/about'
+  
   get 'homes/top'
 end

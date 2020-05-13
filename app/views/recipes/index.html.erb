@@ -1,7 +1,9 @@
 
 
     <div class="flex-item1">
+	  <% if @user != nil %>	
 			<%= render "users/sidebar",user: @user %>
+			<% end %>
     </div>
 	  <div class="flex-item2">
 			<% @recipes.each do |recipe| %>

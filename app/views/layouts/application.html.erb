@@ -83,9 +83,10 @@
           <% if current_user && current_user == @user %>
             <li class="nav-item active">
               <%= link_to "マイページ", user_path(current_user.id), class: "nav-link" %></li>
-            <li class="nav-item active">
-              <%= link_to "logout", destroy_user_session_path, class: "nav-link", method: :delete %></li>
+            
           <%end%>
+          <li class="nav-item active">
+              <%= link_to "logout", destroy_user_session_path, class: "nav-link", method: :delete %></li>
             <li class="nav-item active">
               <%= link_to "レシピ一覧", recipes_path, class: "nav-link" %></li>
             <li class="nav-item active">

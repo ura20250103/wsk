@@ -15,7 +15,7 @@
 								<th><br><br><%= link_to recipe.title, recipe, class: "recipe_#{recipe.id}" %></th>
 								<th><br><br>カテゴリー:<%=link_to recipe.category.name, categories_path(recipe.category.id) %></th>
 								
-								<th><br><br>更新日:<%= recipe.updated_at.to_s(:datetime_jp) %></th>
+								<th><br><br>更新:<%= recipe.updated_at.to_s(:datetime_jp) %></th>
 						</tr>
 					</tbody>
 				</table>
